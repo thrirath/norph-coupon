@@ -1,0 +1,13 @@
+
+---
+coupons:
+  columns:
+  - cid
+  - code
+  - planid
+  - activate
+  - other_desc
+  - expire_date
+  - created_at
+  - updated_at
+  records: 

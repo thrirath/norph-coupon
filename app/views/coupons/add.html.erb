@@ -1,0 +1,24 @@
+<%  content_for :title, 'Add Coupon(s)'%>
+<h1>Add Coupon(s)</h1>
+
+<%= form_tag('/coupons/generate', method: 'post') do %>
+	<%= label_tag 'prefix', 'Prefix' %>
+	<%= text_field_tag 'prefix', nil, placeholder: 'Prefix' %>
+	
+	<%= label_tag 'plan', 'Plan' %>
+	<%= text_field_tag 'plan', nil, placeholder: 'Plan' %>
+	
+	<%= label_tag 'expire_date', 'Expire' %>
+	<%= month_field_tag 'expire_date' %>
+
+	<%= label_tag 'amount', 'Amount' %>
+	<%= number_field_tag 'amount', 0, min: 0 %>
+	
+	<br>
+	<%= label_tag 'desc', 'Description' %>
+	<%= text_area_tag 'desc', nil, placeholder: 'Description goes here!' %>
+
+	<%= submit_tag("Go") %>
+<% end %>
+
+<%= link_to "Back", coupons_index_path %>

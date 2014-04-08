@@ -1,0 +1,30 @@
+<% content_for :title, 'Edit coupon : '+@coupon.cid.to_s %>
+
+<h1>Edit <%= @coupon.cid %></h1>
+
+<%= form_tag('/coupons/update', method: 'post') do %>
+
+	<%= hidden_field_tag 'cid', @coupon.cid %>
+
+	<%= label_tag 'code', 'Code' %>
+	<%= text_field_tag 'code', @coupon.code %>
+	<p>
+			
+	<%= label_tag 'plan', 'Plan' %>
+	<%= text_field_tag 'plan', @coupon.planid %>
+	<p>
+				
+	<%= label_tag 'expire_date', 'Expire' %>
+	<%= month_field_tag 'expire_date', @coupon.expire_date %>
+	<p>
+
+
+	<%= label_tag 'desc', 'Description' %>
+	<%= text_area_tag 'desc', @coupon.other_desc %>
+	<p>
+
+	<%= submit_tag("Update!") %>
+<% end %>
+
+<p>
+<%= link_to 'back', coupons_index_path %>

@@ -1,0 +1,28 @@
+<% content_for :title, "NORPH Coupons Manager" %>
+
+<h1>NORPH Coupons Manager </h1>
+
+<%= link_to 'Add Coupon(s)', coupons_add_path %>
+<p>
+<table>
+	<tr>
+		<th>Coupon Id</th>
+		<th>Code</th>
+		<th>Plan</th>
+		<th>Activate</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @coupons.each do |c| %>
+	<tr>
+		<td><%= c.cid %></td>
+		<td><%= c.code %></td>
+		<td><%= c.planid %></td>
+		<td><%= c.activate %></td>
+		<td><%= link_to 'Show', coupon_show_path(c) %></td>
+		<td><%= link_to 'Edit', coupon_edit_path(c) %></td>
+		<td><%= link_to 'Delete', coupon_delete_path(c), data: { confirm: 'เอาเจงเดะ'} %></td>
+	</tr>
+	<% end %>
+</table>

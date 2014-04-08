@@ -1,0 +1,33 @@
+<% content_for :title, 'Coupon : '+@coupon.cid.to_s %>
+
+<h1>Coupon id : <%= @coupon.cid %></h1>
+
+<table>
+
+	<tr>
+		<th>Code  </th>
+		<td><%= @coupon.code %><td>
+	</tr>
+
+	<tr>
+		<th>Plan  </th>
+		<td><%= @coupon.planid %><td>
+	</tr>
+
+	<tr>
+		<th>Activate?  </th>
+		<td><%= @coupon.activate %><td>
+	</tr>
+
+	<tr>
+		<th>Expire date  </th>
+		<td><%= @coupon.expire_date %><td>
+	</tr>
+
+	<tr>
+		<th>Description</th>
+		<td><%= @coupon.other_desc %><td>
+	</tr>
+</table>
+
+<%= link_to 'Back', coupons_index_path %>
