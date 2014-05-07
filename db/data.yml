@@ -1,13 +1,22 @@
 
 ---
-coupons:
+apps:
   columns:
-  - cid
-  - code
+  - appid
+  - appname
+  - git
+  - dbname
+  - domainname
+  - path
+  - status
   - planid
-  - activate
-  - other_desc
+  - uid
+  - bw_usage
+  - storage_usage
+  - db_usage
   - expire_date
   - created_at
   - updated_at
+  - last_update_bw
+  - last_reset
   records: 
